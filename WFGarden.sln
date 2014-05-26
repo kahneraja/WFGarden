@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFGarden.Business", "WFGarden.Business\WFGarden.Business.csproj", "{60DC80B6-2372-4E54-A1E8-8B93B949D25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFGarden.Data", "WFGarden.Data\WFGarden.Data.csproj", "{177DF65F-4544-46E8-B8DD-1E3AF2CF4094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFGarden.Testing", "WFGarden.Testing\WFGarden.Testing.csproj", "{4EE40BA2-C81A-441E-B33C-0F210AC89139}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60DC80B6-2372-4E54-A1E8-8B93B949D25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DC80B6-2372-4E54-A1E8-8B93B949D25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DC80B6-2372-4E54-A1E8-8B93B949D25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DC80B6-2372-4E54-A1E8-8B93B949D25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177DF65F-4544-46E8-B8DD-1E3AF2CF4094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177DF65F-4544-46E8-B8DD-1E3AF2CF4094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177DF65F-4544-46E8-B8DD-1E3AF2CF4094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177DF65F-4544-46E8-B8DD-1E3AF2CF4094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE40BA2-C81A-441E-B33C-0F210AC89139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE40BA2-C81A-441E-B33C-0F210AC89139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE40BA2-C81A-441E-B33C-0F210AC89139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE40BA2-C81A-441E-B33C-0F210AC89139}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

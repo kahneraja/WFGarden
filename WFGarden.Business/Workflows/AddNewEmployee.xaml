@@ -1,0 +1,129 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="WFGarden.Business.Workflows.AddNewEmployee"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:local="clr-namespace:WFGarden.Business.Actions"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:wd="clr-namespace:WFGarden.Data;assembly=WFGarden.Data"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Employee" Type="InArgument(wd:Employee)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>WFGarden.Business.Workflows.AddNewEmployee_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>WFGarden.Data</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>WFGarden.Data</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WFGarden.Business</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.StartNode>
+      <FlowDecision x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="" DisplayName="Valid Location" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+        <FlowDecision.Condition>
+          <mca:CSharpValue x:TypeArguments="x:Boolean">Rules.ValidateLocationRule.IsSatisfied(Employee)</mca:CSharpValue>
+        </FlowDecision.Condition>
+        <FlowDecision.True>
+          <FlowDecision x:Name="__ReferenceID1" DisplayName="Valid Age" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+            <FlowDecision.Condition>
+              <mca:CSharpValue x:TypeArguments="x:Boolean">Rules.ValidateAgeRule.IsSatisfied(Employee)</mca:CSharpValue>
+            </FlowDecision.Condition>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                <InvokeMethod sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Execute" TargetType="local:AddEmployeeAction">
+                  <InArgument x:TypeArguments="wd:Employee">
+                    <mca:CSharpValue x:TypeArguments="wd:Employee">Employee</mca:CSharpValue>
+                  </InArgument>
+                </InvokeMethod>
+              </FlowStep>
+            </FlowDecision.True>
+          </FlowDecision>
+        </FlowDecision.True>
+      </FlowDecision>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <sads:DebugSymbol.Symbol>d21jOlx1c2Vyc1xtYW5keVxkb2N1bWVudHNcdmlzdWFsIHN0dWRpbyAyMDEzXFByb2plY3RzXFdGR2FyZGVuXFdGR2FyZGVuLkJ1c2luZXNzXFdvcmtmbG93c1xBZGROZXdFbXBsb3llZS54YW1sBS8DSw8CAQEzCzN6AgEHOA84eQIBBTwRQCACAQI+FT5eAgED</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="InvokeMethod_1" sap:VirtualizedContainerService.HintSize="218,130">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">191,485</av:Point>
+            <av:Size x:Key="ShapeSize">218,130</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="70,87">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">265,346.5</av:Point>
+            <av:Size x:Key="ShapeSize">70,87</av:Size>
+            <av:PointCollection x:Key="TrueConnector">265,390 240,390 240,455 300,455 300,485</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowDecision_2" sap:VirtualizedContainerService.HintSize="79,87">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">265,176.5</av:Point>
+            <av:Size x:Key="ShapeSize">79,87</av:Size>
+            <av:PointCollection x:Key="TrueConnector">265,220 240,220 240,316.5 300,316.5 300,346.5</av:PointCollection>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="670,801">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 304.5,107.5 304.5,176.5</av:PointCollection>
+            <x:Double x:Key="Height">764.76</x:Double>
+            <x:Double x:Key="Width">655.5</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WFGarden.Business.Workflows.AddNewEmployee_1" sap:VirtualizedContainerService.HintSize="710,881" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
